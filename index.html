@@ -1,0 +1,1621 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>도연이의 한국무용 진학 로드맵</title>
+  <style>
+    :root {
+      --primary: #8b2252;
+      --primary-light: #c4547e;
+      --primary-soft: #f9eef3;
+      --accent: #d4a843;
+      --accent-light: #fdf4e0;
+      --dark: #2c1a2e;
+      --gray: #6b7280;
+      --gray-light: #f3f4f6;
+      --border: #e5e7eb;
+      --green: #059669;
+      --green-light: #ecfdf5;
+      --blue: #2563eb;
+      --blue-light: #eff6ff;
+      --red: #dc2626;
+      --red-light: #fef2f2;
+      --orange: #d97706;
+      --orange-light: #fffbeb;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif;
+      background: #fdf8fb;
+      color: var(--dark);
+      line-height: 1.6;
+    }
+
+    /* Header */
+    header {
+      background: linear-gradient(135deg, var(--primary) 0%, #5c1a3a 100%);
+      color: white;
+      padding: 48px 24px 64px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    header::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Ccircle cx='30' cy='30' r='20'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+      pointer-events: none;
+    }
+    header h1 { font-size: clamp(1.6rem, 4vw, 2.6rem); font-weight: 700; margin-bottom: 8px; }
+    header p { font-size: 1rem; opacity: 0.85; margin-bottom: 20px; }
+    .header-badges { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
+    .badge {
+      background: rgba(255,255,255,0.18);
+      border: 1px solid rgba(255,255,255,0.3);
+      border-radius: 20px;
+      padding: 4px 14px;
+      font-size: 0.85rem;
+    }
+
+    /* Nav tabs */
+    nav {
+      background: white;
+      border-bottom: 2px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      overflow-x: auto;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 16px;
+    }
+    nav ul li a {
+      display: block;
+      padding: 14px 20px;
+      text-decoration: none;
+      color: var(--gray);
+      font-size: 0.92rem;
+      font-weight: 500;
+      white-space: nowrap;
+      border-bottom: 3px solid transparent;
+      transition: all .2s;
+    }
+    nav ul li a:hover, nav ul li a.active {
+      color: var(--primary);
+      border-bottom-color: var(--primary);
+    }
+
+    /* Layout */
+    main {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 32px 16px 64px;
+    }
+
+    section { margin-bottom: 56px; }
+    section h2 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 20px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid var(--primary-soft);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    section h2 .icon { font-size: 1.4rem; }
+
+    /* Summary cards */
+    .summary-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 16px;
+      margin-bottom: 32px;
+    }
+    .summary-card {
+      background: white;
+      border-radius: 14px;
+      padding: 20px;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.07);
+      border: 1px solid var(--border);
+      text-align: center;
+    }
+    .summary-card .label { font-size: 0.82rem; color: var(--gray); margin-bottom: 6px; }
+    .summary-card .value { font-size: 1.5rem; font-weight: 700; color: var(--primary); }
+    .summary-card .sub { font-size: 0.8rem; color: var(--gray); margin-top: 4px; }
+
+    /* Timeline */
+    .timeline { position: relative; padding-left: 32px; }
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 12px;
+      top: 0; bottom: 0;
+      width: 2px;
+      background: linear-gradient(to bottom, var(--primary), var(--accent));
+    }
+    .tl-item {
+      position: relative;
+      margin-bottom: 28px;
+    }
+    .tl-dot {
+      position: absolute;
+      left: -28px;
+      top: 6px;
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background: var(--primary);
+      border: 3px solid white;
+      box-shadow: 0 0 0 2px var(--primary);
+    }
+    .tl-dot.accent { background: var(--accent); box-shadow: 0 0 0 2px var(--accent); }
+    .tl-dot.green { background: var(--green); box-shadow: 0 0 0 2px var(--green); }
+    .tl-card {
+      background: white;
+      border-radius: 12px;
+      padding: 16px 20px;
+      border: 1px solid var(--border);
+      box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+    }
+    .tl-card .year-badge {
+      display: inline-block;
+      background: var(--primary-soft);
+      color: var(--primary);
+      font-size: 0.78rem;
+      font-weight: 600;
+      padding: 2px 10px;
+      border-radius: 10px;
+      margin-bottom: 6px;
+    }
+    .tl-card.accent-bg { border-left: 4px solid var(--accent); }
+    .tl-card.primary-bg { border-left: 4px solid var(--primary); }
+    .tl-card.green-bg { border-left: 4px solid var(--green); }
+    .tl-card h3 { font-size: 1rem; font-weight: 600; margin-bottom: 4px; }
+    .tl-card p { font-size: 0.88rem; color: var(--gray); }
+    .tl-cost {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--primary);
+      margin-top: 6px;
+    }
+
+    /* School cards */
+    .school-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 20px;
+    }
+    .school-card {
+      background: white;
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+      transition: transform .2s, box-shadow .2s;
+    }
+    .school-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+    }
+    .school-header {
+      padding: 16px 20px;
+      color: white;
+      position: relative;
+    }
+    .school-header.tier1 { background: linear-gradient(135deg, #8b2252, #c4547e); }
+    .school-header.tier2 { background: linear-gradient(135deg, #1d4ed8, #3b82f6); }
+    .school-header.tier3 { background: linear-gradient(135deg, #065f46, #10b981); }
+    .school-header h3 { font-size: 1.05rem; font-weight: 700; }
+    .school-header p { font-size: 0.82rem; opacity: 0.9; margin-top: 2px; }
+    .tier-badge {
+      position: absolute;
+      top: 12px; right: 16px;
+      background: rgba(255,255,255,0.25);
+      border: 1px solid rgba(255,255,255,0.4);
+      padding: 2px 10px;
+      border-radius: 10px;
+      font-size: 0.75rem;
+      font-weight: 600;
+    }
+    .school-body { padding: 16px 20px; }
+    .school-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 8px 0;
+      border-bottom: 1px solid var(--gray-light);
+      font-size: 0.88rem;
+    }
+    .school-row:last-child { border-bottom: none; }
+    .school-row .key { color: var(--gray); }
+    .school-row .val { font-weight: 600; }
+
+    /* Professor info */
+    .prof-section {
+      margin-top: 14px;
+      padding-top: 12px;
+      border-top: 1px dashed var(--border);
+    }
+    .prof-section summary {
+      cursor: pointer;
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--primary);
+      list-style: none;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 0;
+      user-select: none;
+    }
+    .prof-section summary::after {
+      content: '▾';
+      margin-left: auto;
+      font-size: 0.75rem;
+      color: var(--gray);
+    }
+    details[open] .prof-section summary::after { content: '▴'; }
+    .prof-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.8rem;
+      margin-top: 8px;
+    }
+    .prof-table th {
+      background: var(--primary-soft);
+      color: var(--primary);
+      padding: 5px 8px;
+      text-align: left;
+      font-weight: 700;
+      font-size: 0.78rem;
+    }
+    .prof-table td {
+      padding: 5px 8px;
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+    }
+    .prof-table tr:last-child td { border-bottom: none; }
+    .prof-note {
+      font-size: 0.78rem;
+      color: var(--gray);
+      margin-top: 6px;
+      padding: 6px 8px;
+      background: var(--gray-light);
+      border-radius: 6px;
+    }
+
+    /* Probability bars */
+    .prob-bar-wrap {
+      margin-top: 12px;
+      background: var(--gray-light);
+      border-radius: 8px;
+      overflow: hidden;
+      height: 24px;
+      position: relative;
+    }
+    .prob-bar {
+      height: 100%;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      padding-left: 10px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: white;
+      transition: width 1s ease;
+    }
+    .prob-label {
+      font-size: 0.82rem;
+      font-weight: 600;
+      margin-bottom: 4px;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    /* Cost breakdown table */
+    .cost-table {
+      width: 100%;
+      border-collapse: collapse;
+      background: white;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.07);
+    }
+    .cost-table th {
+      background: var(--primary);
+      color: white;
+      padding: 12px 16px;
+      text-align: left;
+      font-size: 0.88rem;
+    }
+    .cost-table td {
+      padding: 11px 16px;
+      border-bottom: 1px solid var(--border);
+      font-size: 0.88rem;
+    }
+    .cost-table tr:last-child td { border-bottom: none; }
+    .cost-table tr:nth-child(even) td { background: #fafafa; }
+    .cost-table .total td {
+      font-weight: 700;
+      background: var(--primary-soft);
+      color: var(--primary);
+      font-size: 0.95rem;
+    }
+    .cost-table .section-header td {
+      background: #f9f0f5;
+      font-weight: 600;
+      color: var(--primary);
+    }
+    .amount { text-align: right; font-weight: 600; }
+    .note { color: var(--gray); font-size: 0.8rem; }
+
+    /* Tips box */
+    .tip-box {
+      background: var(--accent-light);
+      border: 1px solid #e8d08a;
+      border-left: 4px solid var(--accent);
+      border-radius: 10px;
+      padding: 14px 18px;
+      margin-top: 16px;
+      font-size: 0.88rem;
+    }
+    .tip-box strong { color: #92620a; }
+
+    .info-box {
+      background: var(--blue-light);
+      border: 1px solid #bfdbfe;
+      border-left: 4px solid var(--blue);
+      border-radius: 10px;
+      padding: 14px 18px;
+      margin-top: 16px;
+      font-size: 0.88rem;
+    }
+    .info-box strong { color: var(--blue); }
+
+    .warn-box {
+      background: var(--red-light);
+      border: 1px solid #fecaca;
+      border-left: 4px solid var(--red);
+      border-radius: 10px;
+      padding: 14px 18px;
+      margin-top: 16px;
+      font-size: 0.88rem;
+    }
+    .warn-box strong { color: var(--red); }
+
+    /* Total summary */
+    .grand-total {
+      background: linear-gradient(135deg, var(--primary), #5c1a3a);
+      color: white;
+      border-radius: 16px;
+      padding: 28px 32px;
+      text-align: center;
+      margin-top: 24px;
+    }
+    .grand-total h3 { font-size: 1.1rem; opacity: 0.85; margin-bottom: 8px; }
+    .grand-total .amount-big { font-size: 2.4rem; font-weight: 700; margin-bottom: 8px; }
+    .grand-total p { font-size: 0.88rem; opacity: 0.8; }
+    .grand-total .range { font-size: 1rem; opacity: 0.9; margin-top: 4px; }
+
+    /* Tabs within section */
+    .tab-buttons {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+    }
+    .tab-btn {
+      padding: 8px 18px;
+      border-radius: 20px;
+      border: 2px solid var(--border);
+      background: white;
+      font-size: 0.88rem;
+      cursor: pointer;
+      transition: all .2s;
+      font-family: inherit;
+    }
+    .tab-btn.active, .tab-btn:hover {
+      background: var(--primary);
+      color: white;
+      border-color: var(--primary);
+    }
+
+    .chip {
+      display: inline-block;
+      padding: 2px 10px;
+      border-radius: 10px;
+      font-size: 0.78rem;
+      font-weight: 600;
+    }
+    .chip.high { background: #dcfce7; color: #166534; }
+    .chip.mid { background: #fef9c3; color: #92400e; }
+    .chip.low { background: #fee2e2; color: #991b1b; }
+
+    footer {
+      background: var(--dark);
+      color: rgba(255,255,255,0.6);
+      text-align: center;
+      padding: 24px;
+      font-size: 0.82rem;
+    }
+    footer strong { color: rgba(255,255,255,0.85); }
+
+    @media (max-width: 600px) {
+      .school-grid { grid-template-columns: 1fr; }
+      .summary-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>🎭 도연이의 한국무용 진학 로드맵</h1>
+  <p>예술고등학교 → 대학교까지, 비용·입시경쟁률 종합 가이드</p>
+  <div class="header-badges">
+    <span class="badge">현재 나이: 11세 (초5)</span>
+    <span class="badge">전공: 한국무용</span>
+    <span class="badge">기준연도: 2026년</span>
+  </div>
+</header>
+
+<nav>
+  <ul>
+    <li><a href="#overview" class="active">전체 요약</a></li>
+    <li><a href="#timeline">진학 타임라인</a></li>
+    <li><a href="#highschool">예술고등학교</a></li>
+    <li><a href="#university">대학교</a></li>
+    <li><a href="#cost">비용 총정리</a></li>
+    <li><a href="#tips">입시 전략</a></li>
+  </ul>
+</nav>
+
+<main>
+
+  <!-- ① 전체 요약 -->
+  <section id="overview">
+    <h2><span class="icon">📊</span> 전체 비용 요약</h2>
+    <div class="summary-grid">
+      <div class="summary-card">
+        <div class="label">현재~예고 입시 준비 (약 3년)</div>
+        <div class="value">3,600만~</div>
+        <div class="sub">연 1,200만 이상</div>
+      </div>
+      <div class="summary-card">
+        <div class="label">예술고 3년 총비용</div>
+        <div class="value">4,000만~1억</div>
+        <div class="sub">학교 유형별 큰 차이</div>
+      </div>
+      <div class="summary-card">
+        <div class="label">대학 4년 총비용</div>
+        <div class="value">4,000만~8,000만</div>
+        <div class="sub">학비+레슨+의상 등</div>
+      </div>
+      <div class="summary-card">
+        <div class="label">총 예상 투자액</div>
+        <div class="value">1.2억~2억+</div>
+        <div class="sub">약 10~11년 기준</div>
+      </div>
+    </div>
+
+    <div class="tip-box">
+      <strong>💡 핵심 포인트:</strong> 비용의 가장 큰 변수는 <strong>사립 vs 공립 예고 선택</strong>과 <strong>서울 소재 여부</strong>입니다.
+      한국예술종합학교(K-Arts) 진학을 목표로 하면 사전 투자가 많지만 대학 학비가 상대적으로 저렴합니다.
+    </div>
+  </section>
+
+  <!-- ② 타임라인 -->
+  <section id="timeline">
+    <h2><span class="icon">📅</span> 진학 타임라인</h2>
+    <div class="timeline">
+
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-card primary-bg">
+          <span class="year-badge">2026~2027 · 초5~6 (11~12세)</span>
+          <h3>본격 입시 준비 시작</h3>
+          <p>전문 한국무용 학원 등록 또는 개인 레슨 전환, 무용단 수강, 발표회 참가</p>
+          <div class="tl-cost">월 80만~150만원 · 연 1,000만~1,800만원</div>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-card primary-bg">
+          <span class="year-badge">2029 · 중1 (13세)</span>
+          <h3>중학교 입학 · 실기 심화</h3>
+          <p>예고 입시 전문 학원 탐색, 기초 실기 완성, 대회 출전 시작 권장</p>
+          <div class="tl-cost">월 100만~200만원 · 연 1,200만~2,400만원</div>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-dot accent"></div>
+        <div class="tl-card accent-bg">
+          <span class="year-badge">2030~2031 · 중2~3 (14~15세)</span>
+          <h3>예술고등학교 집중 입시 준비</h3>
+          <p>입시 레파토리 완성, 실기 시험 준비, 학교별 입시 전략 수립</p>
+          <div class="tl-cost">월 150만~300만원 · 연 1,800만~3,600만원</div>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-dot accent"></div>
+        <div class="tl-card accent-bg">
+          <span class="year-badge">2031년 말~2032 · 중3 (15세)</span>
+          <h3>🏫 예술고등학교 입학 시험</h3>
+          <p>실기 + 학과 시험, 면접. 목표 학교 2~3곳 복수지원 전략 필요</p>
+          <div class="tl-cost">원서 접수비 및 준비비 포함</div>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-card primary-bg">
+          <span class="year-badge">2032~2034 · 예고 1~3학년 (16~18세)</span>
+          <h3>예술고등학교 재학</h3>
+          <p>학교 수업 + 개인레슨 병행, 대학 입시 준비, 콩쿠르·발표회 참가</p>
+          <div class="tl-cost">월 150만~350만원 · 3년 총 5,000만~1억원</div>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-dot accent"></div>
+        <div class="tl-card accent-bg">
+          <span class="year-badge">2034년 말 · 예고 3학년 (18세)</span>
+          <h3>🎓 대학교 실기 입시</h3>
+          <p>수시(실기 위주) + 정시, 수능 최저 있는 학교 병행 전략</p>
+          <div class="tl-cost">실기 지도비 + 의상 = 월 200만~400만원</div>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-dot green"></div>
+        <div class="tl-card green-bg">
+          <span class="year-badge">2035~2038 · 대학 1~4학년 (19~22세)</span>
+          <h3>🎭 대학교 한국무용 전공</h3>
+          <p>전공 실기 심화, 졸업 공연, 대학원 진학 또는 무용단 활동</p>
+          <div class="tl-cost">연 1,000만~2,000만원 · 4년 총 4,000만~8,000만원</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ③ 예술고등학교 -->
+  <section id="highschool">
+    <h2><span class="icon">🏫</span> 예술고등학교 정보</h2>
+
+    <div class="info-box">
+      <strong>📌 입시 방식:</strong> 대부분 <strong>실기시험 60~80% + 내신/학교생활기록부 20~40%</strong> 반영.
+      일부 학교는 면접 포함. 지원 시기는 중3 2학기(10~12월).
+    </div>
+
+    <div style="background:#f0fdf4;border:1px solid #86efac;border-left:4px solid #16a34a;border-radius:10px;padding:14px 18px;margin-top:14px;font-size:0.85rem;">
+      <strong style="color:#15803d;">✅ 2026학년도 공식 발표 데이터 포함</strong> — 서울공연예술고: 공식 홈페이지 / 그 외 예고: 각 학교 홈페이지·입시 기관 참고 추정
+    </div>
+
+    <br/>
+    <div class="school-grid">
+
+      <!-- 서울예고 -->
+      <div class="school-card">
+        <div class="school-header tier1">
+          <div class="tier-badge">최상위</div>
+          <h3>서울예술고등학교</h3>
+          <p>서울 종로구 · 사립</p>
+        </div>
+        <div class="school-body">
+          <div class="school-row">
+            <span class="key">모집 인원</span>
+            <span class="val">한국무용 약 15~20명/년</span>
+          </div>
+          <div class="school-row">
+            <span class="key">경쟁률</span>
+            <span class="val">5:1 ~ 10:1</span>
+          </div>
+          <div class="school-row">
+            <span class="key">연간 학비</span>
+            <span class="val">약 900만~1,200만원</span>
+          </div>
+          <div class="school-row">
+            <span class="key">기숙사</span>
+            <span class="val">없음 (통학)</span>
+          </div>
+          <div class="school-row">
+            <span class="key">특징</span>
+            <span class="val">국내 최고 명성, 입시 난이도 최상</span>
+          </div>
+          <div class="prob-label">
+            <span>합격 가능성 (상위권 기준)</span>
+            <span class="chip low">난이도 최상</span>
+          </div>
+          <div class="prob-bar-wrap">
+            <div class="prob-bar" style="width:20%; background:linear-gradient(90deg,#dc2626,#f87171);">상위 20%</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 선화예고 -->
+      <div class="school-card">
+        <div class="school-header tier1">
+          <div class="tier-badge">최상위</div>
+          <h3>선화예술고등학교</h3>
+          <p>서울 성동구 · 사립</p>
+        </div>
+        <div class="school-body">
+          <div class="school-row">
+            <span class="key">모집 인원</span>
+            <span class="val">한국무용 약 10~15명/년</span>
+          </div>
+          <div class="school-row">
+            <span class="key">경쟁률</span>
+            <span class="val">5:1 ~ 8:1</span>
+          </div>
+          <div class="school-row">
+            <span class="key">연간 학비</span>
+            <span class="val">약 1,000만~1,300만원</span>
+          </div>
+          <div class="school-row">
+            <span class="key">기숙사</span>
+            <span class="val">있음 (추가비용)</span>
+          </div>
+          <div class="school-row">
+            <span class="key">특징</span>
+            <span class="val">서울예고와 양대산맥, 대입 실적 우수</span>
+          </div>
+          <div class="prob-label">
+            <span>합격 가능성 (상위권 기준)</span>
+            <span class="chip low">난이도 최상</span>
+          </div>
+          <div class="prob-bar-wrap">
+            <div class="prob-bar" style="width:22%; background:linear-gradient(90deg,#dc2626,#f87171);">상위 22%</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 계원예고 -->
+      <div class="school-card">
+        <div class="school-header tier2">
+          <div class="tier-badge">상위</div>
+          <h3>계원예술고등학교</h3>
+          <p>경기 의왕시 · 사립</p>
+        </div>
+        <div class="school-body">
+          <div class="school-row">
+            <span class="key">모집 인원</span>
+            <span class="val">한국무용 약 10~15명/년</span>
+          </div>
+          <div class="school-row">
+            <span class="key">경쟁률</span>
+            <span class="val">3:1 ~ 6:1</span>
+          </div>
+          <div class="school-row">
+            <span class="key">연간 학비</span>
+            <span class="val">약 1,200만~1,800만원</span>
+          </div>
+          <div class="school-row">
+            <span class="key">기숙사</span>
+            <span class="val">있음 (기숙 중심)</span>
+          </div>
+          <div class="school-row">
+            <span class="key">특징</span>
+            <span class="val">명문 사립, 기숙사 생활, K-Arts 진학률 높음</span>
+          </div>
+          <div class="prob-label">
+            <span>합격 가능성 (상위권 기준)</span>
+            <span class="chip mid">난이도 상</span>
+          </div>
+          <div class="prob-bar-wrap">
+            <div class="prob-bar" style="width:35%; background:linear-gradient(90deg,#d97706,#fbbf24);">상위 35%</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 전통예고 -->
+      <div class="school-card">
+        <div class="school-header tier2">
+          <div class="tier-badge">상위</div>
+          <h3>한국전통예술고등학교</h3>
+          <p>서울 강동구 · 공립 (국립국악원 부설)</p>
+        </div>
+        <div class="school-body">
+          <div class="school-row">
+            <span class="key">모집 인원</span>
+            <span class="val">한국무용 약 10명/년</span>
+          </div>
+          <div class="school-row">
+            <span class="key">경쟁률</span>
+            <span class="val">4:1 ~ 7:1</span>
+          </div>
+          <div class="school-row">
+            <span class="key">연간 학비</span>
+            <span class="val">약 100만~200만원 (공립)</span>
+          </div>
+          <div class="school-row">
+            <span class="key">기숙사</span>
+            <span class="val">있음</span>
+          </div>
+          <div class="school-row">
+            <span class="key">특징</span>
+            <span class="val">전통예술 특화, 학비 매우 저렴, K-Arts 직결</span>
+          </div>
+          <div class="prob-label">
+            <span>합격 가능성 (상위권 기준)</span>
+            <span class="chip mid">난이도 상</span>
+          </div>
+          <div class="prob-bar-wrap">
+            <div class="prob-bar" style="width:30%; background:linear-gradient(90deg,#d97706,#fbbf24);">상위 30%</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 국립전통예술중고 -->
+      <div class="school-card">
+        <div class="school-header tier2">
+          <div class="tier-badge">상위</div>
+          <h3>국립전통예술고등학교</h3>
+          <p>전북 익산시 · 국립</p>
+        </div>
+        <div class="school-body">
+          <div class="school-row">
+            <span class="key">모집 인원</span>
+            <span class="val">한국무용 약 15명/년</span>
+          </div>
+          <div class="school-row">
+            <span class="key">경쟁률</span>
+            <span class="val">3:1 ~ 5:1</span>
+          </div>
+          <div class="school-row">
+            <span class="key">연간 학비</span>
+            <span class="val">약 50만~100만원 (국립)</span>
+          </div>
+          <div class="school-row">
+            <span class="key">기숙사</span>
+            <span class="val">있음 (기숙형)</span>
+          </div>
+          <div class="school-row">
+            <span class="key">특징</span>
+            <span class="val">학비 거의 무료, 전통예술 명문, 지방 거주</span>
+          </div>
+          <div class="prob-label">
+            <span>합격 가능성 (상위권 기준)</span>
+            <span class="chip mid">난이도 중상</span>
+          </div>
+          <div class="prob-bar-wrap">
+            <div class="prob-bar" style="width:40%; background:linear-gradient(90deg,#d97706,#fbbf24);">상위 40%</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 지역 예고 -->
+      <div class="school-card">
+        <div class="school-header tier3">
+          <div class="tier-badge">중위</div>
+          <h3>지역 예술고등학교</h3>
+          <p>부산·대구·인천 등 광역시 예고</p>
+        </div>
+        <div class="school-body">
+          <div class="school-row">
+            <span class="key">모집 인원</span>
+            <span class="val">학교별 10~20명/년</span>
+          </div>
+          <div class="school-row" style="background:#fef9f0;">
+            <span class="key">경쟁률 (추정)</span>
+            <span class="val"><strong>2:1 ~ 4:1</strong></span>
+          </div>
+          <div class="school-row">
+            <span class="key">연간 학비</span>
+            <span class="val">공립 150만~300만원</span>
+          </div>
+          <div class="school-row">
+            <span class="key">기숙사</span>
+            <span class="val">학교별 상이</span>
+          </div>
+          <div class="school-row">
+            <span class="key">특징</span>
+            <span class="val">서울 예고 대비 입시 부담 낮음, 지역 거점</span>
+          </div>
+          <div class="prob-label">
+            <span>합격 가능성 (상위권 기준)</span>
+            <span class="chip high">난이도 중</span>
+          </div>
+          <div class="prob-bar-wrap">
+            <div class="prob-bar" style="width:60%; background:linear-gradient(90deg,#059669,#34d399);">상위 60%</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 서울공연예술고 (실제 2026 데이터) -->
+      <div class="school-card">
+        <div class="school-header" style="background:linear-gradient(135deg,#475569,#64748b);">
+          <div class="tier-badge">참고</div>
+          <h3>서울공연예술고등학교 (SOPA)</h3>
+          <p>서울 구로구 · 사립 · 실용무용과</p>
+        </div>
+        <div class="school-body">
+          <div class="school-row">
+            <span class="key">2026 모집인원</span>
+            <span class="val">실용무용과 <strong>34명</strong> 전체</span>
+          </div>
+          <div class="school-row">
+            <span class="key">2026 지원인원</span>
+            <span class="val">한국무용 포함 실용무용A <strong>348명</strong></span>
+          </div>
+          <div class="school-row" style="background:#fef9f0;">
+            <span class="key">🎯 2026 실제 경쟁률 (공식)</span>
+            <span class="val" style="color:#dc2626;font-size:1.05rem;"><strong>15.65 : 1</strong></span>
+          </div>
+          <div class="school-row">
+            <span class="key">연간 학비</span>
+            <span class="val">약 600만~900만원</span>
+          </div>
+          <div class="school-row">
+            <span class="key">⚠️ 주의</span>
+            <span class="val">전통한국무용 아닌 실용무용 계열 (K-Pop, 재즈 등 포함)</span>
+          </div>
+          <div class="prob-label">
+            <span>합격 가능성</span>
+            <span class="chip low">경쟁 매우 치열</span>
+          </div>
+          <div class="prob-bar-wrap">
+            <div class="prob-bar" style="width:6%; background:linear-gradient(90deg,#475569,#94a3b8);">6%</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- 2026 예고 경쟁률 비교표 -->
+    <h3 style="font-size:1rem;color:var(--primary);margin:28px 0 12px;">📊 2026학년도 예술고 한국무용과 경쟁률 비교</h3>
+    <table class="cost-table">
+      <thead>
+        <tr>
+          <th>학교명</th>
+          <th>소재지</th>
+          <th>유형</th>
+          <th>한국무용 모집</th>
+          <th>경쟁률</th>
+          <th>데이터 구분</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>서울예술고등학교</strong></td>
+          <td>서울 종로</td>
+          <td>사립</td>
+          <td class="amount">약 15~20명</td>
+          <td class="amount" style="color:#dc2626;font-weight:700;">5 ~ 10 : 1</td>
+          <td class="note">추정 (공식 미공개)</td>
+        </tr>
+        <tr>
+          <td><strong>선화예술고등학교</strong></td>
+          <td>서울 성동</td>
+          <td>사립</td>
+          <td class="amount">약 10~15명</td>
+          <td class="amount" style="color:#dc2626;font-weight:700;">5 ~ 8 : 1</td>
+          <td class="note">추정 (공식 미공개)</td>
+        </tr>
+        <tr>
+          <td><strong>계원예술고등학교</strong></td>
+          <td>경기 의왕</td>
+          <td>사립</td>
+          <td class="amount">약 10~15명</td>
+          <td class="amount" style="color:#d97706;font-weight:700;">3 ~ 6 : 1</td>
+          <td class="note">추정 (공식 미공개)</td>
+        </tr>
+        <tr>
+          <td><strong>한국전통예술고등학교</strong></td>
+          <td>서울 강동</td>
+          <td>공립</td>
+          <td class="amount">약 10명</td>
+          <td class="amount" style="color:#d97706;font-weight:700;">4 ~ 7 : 1</td>
+          <td class="note">추정 (공식 미공개)</td>
+        </tr>
+        <tr>
+          <td><strong>국립전통예술고등학교</strong></td>
+          <td>전북 익산</td>
+          <td>국립</td>
+          <td class="amount">약 15명</td>
+          <td class="amount" style="color:#d97706;font-weight:700;">3 ~ 5 : 1</td>
+          <td class="note">추정 (공식 미공개)</td>
+        </tr>
+        <tr>
+          <td><strong>서울공연예술고(SOPA)</strong></td>
+          <td>서울 구로</td>
+          <td>사립</td>
+          <td class="amount">실용무용A 포함 34명</td>
+          <td class="amount" style="color:#dc2626;font-weight:700;">15.65 : 1 ✅</td>
+          <td class="note" style="color:#16a34a;font-weight:600;">2026 공식 발표</td>
+        </tr>
+      </tbody>
+    </table>
+    <div style="font-size:0.8rem;color:#6b7280;margin-top:8px;">※ ✅ 표시는 2026학년도 공식 발표 데이터. 나머지는 과거 데이터·입시기관 자료 기반 추정치입니다.</div>
+
+    <div class="warn-box" style="margin-top:16px;">
+      <strong>⚠️ 주의:</strong> 서울예고·선화예고 등 주요 사립 예고는 경쟁률을 공식 공개하지 않는 경우가 많습니다.
+      <strong>실기 점수가 절대적</strong>으로 중요하며, 최신 정보는 각 학교 홈페이지 및 입시 설명회를 통해 반드시 확인하세요.
+    </div>
+  </section>
+
+  <!-- ④ 대학교 -->
+  <section id="university">
+    <h2><span class="icon">🎓</span> 한국무용 전공 대학교</h2>
+
+    <div class="info-box">
+      <strong>📌 대학 입시 방식:</strong> 수시(실기 위주) 70~80% + 정시 20~30%. 실기 비중 50~100%.
+      K-Arts는 별도 전형(예비학교 수료 필요). 수능 최저 없는 학교도 다수.
+    </div>
+
+    <div style="background:#f0fdf4;border:1px solid #86efac;border-left:4px solid #16a34a;border-radius:10px;padding:14px 18px;margin-top:14px;font-size:0.85rem;">
+      <strong style="color:#15803d;">✅ 2026학년도 실제 경쟁률 반영 (공식 출처)</strong><br/>
+      이화여대·세종대: 진학어플라이 수시 최종 경쟁률 / K-Arts: 한국예술종합학교 공식 지원-합격 통계 / 경희대: 진학어플라이 정시 최종 경쟁률 / 중앙대: 2026 수시 입시결과 / 예고: 각 학교 공식 발표 및 추정 병행
+    </div>
+
+    <br/>
+    <div class="school-grid">
+
+      <!-- K-Arts -->
+      <div class="school-card">
+        <div class="school-header tier1">
+          <div class="tier-badge">최상위</div>
+          <h3>한국예술종합학교 (K-Arts)</h3>
+          <p>서울 성북구 · 국립 · 전통예술원</p>
+        </div>
+        <div class="school-body">
+          <div class="school-row">
+            <span class="key">2026 모집인원</span>
+            <span class="val">한국무용 일반 <strong>13명</strong></span>
+          </div>
+          <div class="school-row">
+            <span class="key">2026 지원인원</span>
+            <span class="val"><strong>41명</strong></span>
+          </div>
+          <div class="school-row" style="background:#fef9f0;">
+            <span class="key">🎯 2026 실제 경쟁률</span>
+            <span class="val" style="color:#b45309;font-size:1.05rem;"><strong>3.15 : 1</strong></span>
+          </div>
+          <div class="school-row">
+            <span class="key">연간 학비</span>
+            <span class="val">약 250만~350만원 (국립)</span>
+          </div>
+          <div class="school-row">
+            <span class="key">전형 특징</span>
+            <span class="val">예비학교 수료 후 지원 (독자적 루트)</span>
+          </div>
+          <div class="school-row">
+            <span class="key">졸업 후</span>
+            <span class="val">국립무용단, 각종 무용단 최선호</span>
+          </div>
+          <div class="prob-label">
+            <span>합격 가능성 (전체 지원자 대비)</span>
+            <span class="chip low">극상위권 실력 필요</span>
+          </div>
+          <div class="prob-bar-wrap">
+            <div class="prob-bar" style="width:32%; background:linear-gradient(90deg,#7c3aed,#a78bfa);">32% (13/41)</div>
+          </div>
+          <details class="prof-section">
+            <summary>👩‍🏫 한국무용과 교수진</summary>
+            <table class="prof-table">
+              <thead><tr><th>이름</th><th>직위</th><th>전공</th></tr></thead>
+              <tbody>
+                <tr><td><strong>이소정</strong></td><td>교수 · 무용과장</td><td>민속무용</td></tr>
+              </tbody>
+            </table>
+            <p class="prof-note">※ 전통예술원 무용과 소속. 예비학교 과정 이수 후 지원 가능. (출처: K-Arts 공식 홈페이지)</p>
+          </details>
+        </div>
+      </div>
+
+      <!-- 이화여대 -->
+      <div class="school-card">
+        <div class="school-header tier1">
+          <div class="tier-badge">최상위</div>
+          <h3>이화여자대학교</h3>
+          <p>서울 서대문구 · 사립 · 무용과</p>
+        </div>
+        <div class="school-body">
+          <div class="school-row">
+            <span class="key">2026 모집인원</span>
+            <span class="val">한국무용 수시 <strong>13명</strong></span>
+          </div>
+          <div class="school-row">
+            <span class="key">2026 지원인원</span>
+            <span class="val"><strong>44명</strong></span>
+          </div>
+          <div class="school-row" style="background:#fef9f0;">
+            <span class="key">🎯 2026 실제 경쟁률 (수시)</span>
+            <span class="val" style="color:#b45309;font-size:1.05rem;"><strong>3.38 : 1</strong></span>
+          </div>
+          <div class="school-row">
+            <span class="key">연간 학비</span>
+            <span class="val">약 900만~1,100만원</span>
+          </div>
+          <div class="school-row">
+            <span class="key">전형 특징</span>
+            <span class="val">실기 70% + 학생부 30% · 발레·현대무용도 선발</span>
+          </div>
+          <div class="school-row">
+            <span class="key">특징</span>
+            <span class="val">명문 여대, 무용계 최고 인지도</span>
+          </div>
+          <div class="prob-label">
+            <span>합격 가능성 (전체 지원자 대비)</span>
+            <span class="chip low">최상위 실력 필요</span>
+          </div>
+          <div class="prob-bar-wrap">
+            <div class="prob-bar" style="width:30%; background:linear-gradient(90deg,#dc2626,#f87171);">30% (13/44)</div>
+          </div>
+          <details class="prof-section">
+            <summary>👩‍🏫 한국무용과 교수진</summary>
+            <table class="prof-table">
+              <thead><tr><th>이름</th><th>직위</th><th>비고</th></tr></thead>
+              <tbody>
+                <tr><td><strong>고현정</strong></td><td>부교수</td><td>무용과 전임교원</td></tr>
+                <tr><td><strong>제환정</strong></td><td>부교수</td><td>무용과 전임교원</td></tr>
+              </tbody>
+            </table>
+            <p class="prof-note">⚠️ 한국무용 전임교수 2019년부터 공석. 2025년 1학기 공채 예정 발표. 한국무용 전공생은 현재 시간강사 수업 운영 중. (출처: 한국일보 2024.05)</p>
+          </details>
+        </div>
+      </div>
+
+      <!-- 중앙대 -->
+      <div class="school-card">
+        <div class="school-header tier1">
+          <div class="tier-badge">최상위</div>
+          <h3>중앙대학교</h3>
+          <p>서울 동작구 · 사립 · 무용학부</p>
+        </div>
+        <div class="school-body">
+          <div class="school-row">
+            <span class="key">2026 모집인원</span>
+            <span class="val">한국무용 약 <strong>10~12명</strong></span>
+          </div>
+          <div class="school-row" style="background:#fef9f0;">
+            <span class="key">🎯 2026 실제 경쟁률 (수시)</span>
+            <span class="val" style="color:#b45309;font-size:1.05rem;"><strong>6.3 : 1</strong></span>
+          </div>
+          <div class="school-row">
+            <span class="key">연간 학비</span>
+            <span class="val">약 850만~1,000만원</span>
+          </div>
+          <div class="school-row">
+            <span class="key">전형 특징</span>
+            <span class="val">실기 60~80% · 공연·영상창작학부 통합 선발</span>
+          </div>
+          <div class="school-row">
+            <span class="key">특징</span>
+            <span class="val">예술 분야 명성, 취업률 우수</span>
+          </div>
+          <div class="prob-label">
+            <span>합격 가능성 (전체 지원자 대비)</span>
+            <span class="chip low">최상위 실력 필요</span>
+          </div>
+          <div class="prob-bar-wrap">
+            <div class="prob-bar" style="width:16%; background:linear-gradient(90deg,#dc2626,#f87171);">약 16%</div>
+          </div>
+          <details class="prof-section">
+            <summary>👩‍🏫 한국무용과 교수진</summary>
+            <table class="prof-table">
+              <thead><tr><th>이름</th><th>담당과목</th><th>학력</th></tr></thead>
+              <tbody>
+                <tr><td><strong>김승일</strong></td><td>한국무용</td><td>한국체육대 박사</td></tr>
+                <tr><td><strong>조은숙</strong></td><td>무용이론</td><td>뉴욕대 박사</td></tr>
+                <tr><td><strong>이주희</strong></td><td>무용음악</td><td>오차노미즈여자대 박사</td></tr>
+                <tr><td><strong>김긍수</strong></td><td>발레</td><td>한양대 박사</td></tr>
+                <tr><td><strong>최상철</strong></td><td>현대무용</td><td>뉴욕대 박사</td></tr>
+              </tbody>
+            </table>
+            <p class="prof-note">※ 공연영상창작학부 무용전공(안성캠퍼스) 소속. (출처: 중앙대 무용전공 홈페이지)</p>
+          </details>
+        </div>
+      </div>
+
+      <!-- 경희대 -->
+      <div class="school-card">
+        <div class="school-header tier2">
+          <div class="tier-badge">상위</div>
+          <h3>경희대학교</h3>
+          <p>서울 동대문구 · 사립 · 무용학부</p>
+        </div>
+        <div class="school-body">
+          <div class="school-row">
+            <span class="key">2026 모집인원</span>
+            <span class="val">한국무용 정시 <strong>26명</strong></span>
+          </div>
+          <div class="school-row">
+            <span class="key">2026 지원인원</span>
+            <span class="val"><strong>57명</strong> (정시 기준)</span>
+          </div>
+          <div class="school-row" style="background:#fef9f0;">
+            <span class="key">🎯 2026 실제 경쟁률 (정시)</span>
+            <span class="val" style="color:#b45309;font-size:1.05rem;"><strong>2.19 : 1</strong></span>
+          </div>
+          <div class="school-row">
+            <span class="key">연간 학비</span>
+            <span class="val">약 800만~950만원</span>
+          </div>
+          <div class="school-row">
+            <span class="key">전형 특징</span>
+            <span class="val">수시 실기우수자 + 정시 병행 선발</span>
+          </div>
+          <div class="school-row">
+            <span class="key">특징</span>
+            <span class="val">서울 4년제 주요 무용학부, 현대무용·발레 동시 선발</span>
+          </div>
+          <div class="prob-label">
+            <span>합격 가능성 (정시 기준)</span>
+            <span class="chip mid">상위권 실력 필요</span>
+          </div>
+          <div class="prob-bar-wrap">
+            <div class="prob-bar" style="width:46%; background:linear-gradient(90deg,#d97706,#fbbf24);">46% (26/57)</div>
+          </div>
+          <details class="prof-section">
+            <summary>👩‍🏫 한국무용과 교수진</summary>
+            <table class="prof-table">
+              <thead><tr><th>이름</th><th>전공</th><th>연락처</th></tr></thead>
+              <tbody>
+                <tr><td><strong>안병주</strong></td><td>한국무용</td><td>02-961-0537</td></tr>
+                <tr><td><strong>김영미</strong></td><td>현대무용</td><td>02-961-0398</td></tr>
+              </tbody>
+            </table>
+            <p class="prof-note">※ 무용학부 서울캠퍼스 소속. 한국무용·발레·현대무용 전공 통합 학부제 운영. (출처: 경희대 무용학부 홈페이지)</p>
+          </details>
+        </div>
+      </div>
+
+      <!-- 세종대 -->
+      <div class="school-card">
+        <div class="school-header tier2">
+          <div class="tier-badge">상위</div>
+          <h3>세종대학교</h3>
+          <p>서울 광진구 · 사립 · 무용과</p>
+        </div>
+        <div class="school-body">
+          <div class="school-row">
+            <span class="key">2026 모집인원</span>
+            <span class="val">한국무용 수시 <strong>7명</strong></span>
+          </div>
+          <div class="school-row">
+            <span class="key">2026 지원인원</span>
+            <span class="val"><strong>75명</strong></span>
+          </div>
+          <div class="school-row" style="background:#fef9f0;">
+            <span class="key">🎯 2026 실제 경쟁률 (수시)</span>
+            <span class="val" style="color:#dc2626;font-size:1.05rem;"><strong>10.71 : 1</strong></span>
+          </div>
+          <div class="school-row">
+            <span class="key">연간 학비</span>
+            <span class="val">약 750만~900만원</span>
+          </div>
+          <div class="school-row">
+            <span class="key">전형 특징</span>
+            <span class="val">실기우수자 전형 중심 · 소수 정예 선발</span>
+          </div>
+          <div class="school-row">
+            <span class="key">특징</span>
+            <span class="val">서울 소재, 발레·현대무용도 별도 선발</span>
+          </div>
+          <div class="prob-label">
+            <span>합격 가능성 (전체 지원자 대비)</span>
+            <span class="chip low">높은 경쟁률 주의</span>
+          </div>
+          <div class="prob-bar-wrap">
+            <div class="prob-bar" style="width:9%; background:linear-gradient(90deg,#dc2626,#f87171);">9% (7/75)</div>
+          </div>
+          <details class="prof-section">
+            <summary>👩‍🏫 한국무용과 교수진</summary>
+            <table class="prof-table">
+              <thead><tr><th>이름</th><th>담당</th><th>학력</th></tr></thead>
+              <tbody>
+                <tr><td><strong>김형남</strong></td><td>현대무용 · 학과장</td><td>세종대 무용학 박사</td></tr>
+                <tr><td><strong>김희정</strong></td><td>한국무용</td><td>한양대 체육학 박사 (이학박사)<br><small>세종대 학사→경희대 석사→Sorbonne IV 대학석사</small></td></tr>
+              </tbody>
+            </table>
+            <p class="prof-note">※ 발레·현대무용 교수 별도 재직 중. 소수 정예 운영으로 교수 1인당 학생 수 적음. (출처: 세종대 무용과 홈페이지)</p>
+          </details>
+        </div>
+      </div>
+
+      <!-- 지방국립대 -->
+      <div class="school-card">
+        <div class="school-header tier3">
+          <div class="tier-badge">중위</div>
+          <h3>지방 국립대학교</h3>
+          <p>부산대·전남대·충남대·강원대 등</p>
+        </div>
+        <div class="school-body">
+          <div class="school-row">
+            <span class="key">모집 인원</span>
+            <span class="val">학교별 10~25명/년</span>
+          </div>
+          <div class="school-row" style="background:#fef9f0;">
+            <span class="key">경쟁률 (추정)</span>
+            <span class="val"><strong>2:1 ~ 5:1</strong> 수준</span>
+          </div>
+          <div class="school-row">
+            <span class="key">연간 학비</span>
+            <span class="val">약 400만~600만원</span>
+          </div>
+          <div class="school-row">
+            <span class="key">특징</span>
+            <span class="val">학비 저렴, 장학금 기회 많음</span>
+          </div>
+          <div class="school-row">
+            <span class="key">비고</span>
+            <span class="val">지역 인재 전형 활용 가능</span>
+          </div>
+          <div class="prob-label">
+            <span>합격 가능성</span>
+            <span class="chip high">중위권</span>
+          </div>
+          <div class="prob-bar-wrap">
+            <div class="prob-bar" style="width:60%; background:linear-gradient(90deg,#059669,#34d399);">상위 60%</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- 2026 경쟁률 비교표 -->
+    <h3 style="font-size:1rem;color:var(--primary);margin:28px 0 12px;">📊 2026학년도 대학 한국무용과 경쟁률 실제 비교</h3>
+    <table class="cost-table">
+      <thead>
+        <tr>
+          <th>대학교</th>
+          <th>전형</th>
+          <th>모집인원</th>
+          <th>지원인원</th>
+          <th>경쟁률</th>
+          <th>출처</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>세종대학교</strong></td>
+          <td>수시 실기우수자</td>
+          <td class="amount">7명</td>
+          <td class="amount">75명</td>
+          <td class="amount" style="color:#dc2626;font-weight:700;">10.71 : 1</td>
+          <td class="note">진학어플라이 공식</td>
+        </tr>
+        <tr>
+          <td><strong>중앙대학교</strong></td>
+          <td>수시 실기</td>
+          <td class="amount">약 10~12명</td>
+          <td class="amount">-</td>
+          <td class="amount" style="color:#dc2626;font-weight:700;">6.3 : 1</td>
+          <td class="note">2026 입시결과</td>
+        </tr>
+        <tr>
+          <td><strong>이화여자대학교</strong></td>
+          <td>수시 실기</td>
+          <td class="amount">13명</td>
+          <td class="amount">44명</td>
+          <td class="amount" style="color:#d97706;font-weight:700;">3.38 : 1</td>
+          <td class="note">진학어플라이 공식</td>
+        </tr>
+        <tr>
+          <td><strong>한국예술종합학교</strong></td>
+          <td>일반전형</td>
+          <td class="amount">13명</td>
+          <td class="amount">41명</td>
+          <td class="amount" style="color:#d97706;font-weight:700;">3.15 : 1</td>
+          <td class="note">K-Arts 공식 통계</td>
+        </tr>
+        <tr>
+          <td><strong>경희대학교</strong></td>
+          <td>정시 가군</td>
+          <td class="amount">26명</td>
+          <td class="amount">57명</td>
+          <td class="amount" style="color:#059669;font-weight:700;">2.19 : 1</td>
+          <td class="note">진학어플라이 공식</td>
+        </tr>
+        <tr>
+          <td><strong>지방 국립대</strong></td>
+          <td>수시/정시</td>
+          <td class="amount">학교별 상이</td>
+          <td class="amount">-</td>
+          <td class="amount" style="color:#059669;font-weight:700;">2 ~ 5 : 1</td>
+          <td class="note">추정</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="warn-box" style="margin-top:12px;">
+      <strong>⚠️ 주의:</strong> 수시와 정시는 선발 방식이 다르며 경쟁률 의미도 다릅니다. 수시는 실기 비중이 높고, 정시는 수능+실기 병행이 일반적입니다. 세종대의 경우 수시 모집인원이 7명으로 매우 적어 경쟁률이 높게 나타납니다.
+    </div>
+  </section>
+
+  <!-- ⑤ 비용 총정리 -->
+  <section id="cost">
+    <h2><span class="icon">💰</span> 단계별 비용 총정리</h2>
+
+    <!-- 준비 단계 -->
+    <h3 style="font-size:1rem;color:var(--primary);margin-bottom:12px;margin-top:8px;">① 예고 입시 준비 단계 (초5 ~ 중3 · 약 4년)</h3>
+    <table class="cost-table">
+      <thead>
+        <tr>
+          <th>항목</th>
+          <th>월 비용</th>
+          <th>연간 비용</th>
+          <th>4년 합계</th>
+          <th>비고</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>한국무용 학원/개인레슨</td>
+          <td class="amount">60~150만원</td>
+          <td class="amount">720~1,800만원</td>
+          <td class="amount">2,880~7,200만원</td>
+          <td class="note">개인레슨 전환 시 급증</td>
+        </tr>
+        <tr>
+          <td>의상·소품 구입</td>
+          <td class="amount">-</td>
+          <td class="amount">100~300만원</td>
+          <td class="amount">400~1,200만원</td>
+          <td class="note">레파토리별 별도 제작</td>
+        </tr>
+        <tr>
+          <td>발표회·공연 참가비</td>
+          <td class="amount">-</td>
+          <td class="amount">50~200만원</td>
+          <td class="amount">200~800만원</td>
+          <td class="note">무대 경험 필수</td>
+        </tr>
+        <tr>
+          <td>콩쿠르·대회 출전</td>
+          <td class="amount">-</td>
+          <td class="amount">50~150만원</td>
+          <td class="amount">200~600만원</td>
+          <td class="note">입상 경력이 입시에 유리</td>
+        </tr>
+        <tr>
+          <td>교통비·기타</td>
+          <td class="amount">10~30만원</td>
+          <td class="amount">120~360만원</td>
+          <td class="amount">480~1,440만원</td>
+          <td class="note">서울 원정 레슨 포함</td>
+        </tr>
+        <tr class="total">
+          <td><strong>소계</strong></td>
+          <td class="amount">-</td>
+          <td class="amount">1,040~2,810만원</td>
+          <td class="amount"><strong>4,160~11,240만원</strong></td>
+          <td class="note">준비 강도에 따라 차이 큼</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <br/>
+
+    <!-- 예고 단계 -->
+    <h3 style="font-size:1rem;color:var(--primary);margin-bottom:12px;">② 예술고등학교 재학 단계 (3년)</h3>
+    <table class="cost-table">
+      <thead>
+        <tr>
+          <th>항목</th>
+          <th>사립 예고 (서울예고·선화·계원)</th>
+          <th>공립/국립 예고</th>
+          <th>비고</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>학비 (3년)</td>
+          <td class="amount">2,700~3,600만원</td>
+          <td class="amount">150~600만원</td>
+          <td class="note">사립은 월 80~100만원 수준</td>
+        </tr>
+        <tr>
+          <td>기숙사비 (해당 시)</td>
+          <td class="amount">720~1,440만원</td>
+          <td class="amount">360~720만원</td>
+          <td class="note">계원 등 기숙형 학교</td>
+        </tr>
+        <tr>
+          <td>개인 레슨비 (3년)</td>
+          <td class="amount">1,800~5,400만원</td>
+          <td class="amount">1,800~5,400만원</td>
+          <td class="note">월 50~150만원 (필수)</td>
+        </tr>
+        <tr>
+          <td>의상·소품 (3년)</td>
+          <td class="amount">600~1,200만원</td>
+          <td class="amount">600~1,200만원</td>
+          <td class="note">레파토리 증가로 비용 급증</td>
+        </tr>
+        <tr>
+          <td>대회·발표회 (3년)</td>
+          <td class="amount">300~600만원</td>
+          <td class="amount">300~600만원</td>
+          <td class="note">전국 콩쿠르 포함</td>
+        </tr>
+        <tr>
+          <td>대학 입시 준비 (3학년)</td>
+          <td class="amount">600~1,200만원</td>
+          <td class="amount">600~1,200만원</td>
+          <td class="note">입시 레파토리 전문지도</td>
+        </tr>
+        <tr class="total">
+          <td><strong>소계 (3년)</strong></td>
+          <td class="amount"><strong>6,720~1억 3,440만원</strong></td>
+          <td class="amount"><strong>3,810~9,720만원</strong></td>
+          <td class="note">평균 사립 약 8,000만원</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <br/>
+
+    <!-- 대학 단계 -->
+    <h3 style="font-size:1rem;color:var(--primary);margin-bottom:12px;">③ 대학교 재학 단계 (4년)</h3>
+    <table class="cost-table">
+      <thead>
+        <tr>
+          <th>항목</th>
+          <th>서울 사립대 (이화·중앙·경희 등)</th>
+          <th>국립대 (K-Arts·지방국립)</th>
+          <th>비고</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>학비 (4년)</td>
+          <td class="amount">3,400~4,400만원</td>
+          <td class="amount">1,000~2,400만원</td>
+          <td class="note">장학금 수혜 시 대폭 감소</td>
+        </tr>
+        <tr>
+          <td>개인 레슨 (4년)</td>
+          <td class="amount">960~2,400만원</td>
+          <td class="amount">960~2,400만원</td>
+          <td class="note">월 20~50만원 수준으로 감소</td>
+        </tr>
+        <tr>
+          <td>의상·소품 (4년)</td>
+          <td class="amount">400~800만원</td>
+          <td class="amount">400~800만원</td>
+          <td class="note">졸업공연 의상 별도 큰 비용</td>
+        </tr>
+        <tr>
+          <td>생활비 (하숙·자취, 4년)</td>
+          <td class="amount">2,400~4,800만원</td>
+          <td class="amount">1,200~2,400만원</td>
+          <td class="note">서울 자취 월 50~100만원</td>
+        </tr>
+        <tr>
+          <td>졸업 공연 등 기타</td>
+          <td class="amount">200~400만원</td>
+          <td class="amount">200~400만원</td>
+          <td class="note">졸업작품·공연 준비 비용</td>
+        </tr>
+        <tr class="total">
+          <td><strong>소계 (4년)</strong></td>
+          <td class="amount"><strong>7,360~1억 2,800만원</strong></td>
+          <td class="amount"><strong>3,760~8,400만원</strong></td>
+          <td class="note">생활비 포함 기준</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- 총합 -->
+    <div class="grand-total">
+      <h3>초등 5학년부터 대학 졸업까지 총 예상 비용</h3>
+      <div class="amount-big">약 1억 5천만 ~ 3억원+</div>
+      <div class="range">최소 시나리오 (지방 공립 예고 + 국립대): 약 1.2억원</div>
+      <div class="range">최대 시나리오 (서울 사립 예고 + 서울 사립대 자취): 약 2.8억원+</div>
+      <p style="margin-top:12px;">※ 생활비 제외 순수 교육비만으로도 8,000만~2억원 수준</p>
+    </div>
+  </section>
+
+  <!-- ⑥ 입시 전략 -->
+  <section id="tips">
+    <h2><span class="icon">🎯</span> 입시 전략 & 절약 팁</h2>
+
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;">
+
+      <div class="tip-box">
+        <strong>🏆 합격률을 높이는 핵심 전략</strong><br/><br/>
+        1. <strong>콩쿠르 입상 경력</strong>은 예고·대학 입시 모두에서 강력한 변별 요소<br/>
+        2. 중2 이전에 <strong>입시 전문 레슨 교사</strong>를 확보해 장기간 관계 유지<br/>
+        3. <strong>복수 학교 지원 전략</strong>: 최상위 1곳 + 안정권 2곳 병행<br/>
+        4. 실기 레파토리는 최소 <strong>6개월~1년</strong> 전에 완성 필요
+      </div>
+
+      <div class="tip-box">
+        <strong>💸 비용 절감 전략</strong><br/><br/>
+        1. <strong>국립전통예술고등학교</strong>: 학비 거의 무료, 명문 루트<br/>
+        2. <strong>K-Arts 예비학교</strong> 과정 활용 (합격 시 상대적 저렴)<br/>
+        3. 대학 <strong>지역인재 전형</strong>, <strong>장학금 전략</strong>으로 학비 절감<br/>
+        4. 그룹 레슨과 개인 레슨 <strong>혼합 활용</strong>으로 비용 절감
+      </div>
+
+      <div class="info-box">
+        <strong>📋 K-Arts 특별 루트</strong><br/><br/>
+        한국예술종합학교는 일반 입시와 다른 루트:<br/>
+        • <strong>전통예술고 → 한예종 전통예술원</strong> 진학률 높음<br/>
+        • <strong>예비학교</strong>(중·고등학생 대상) 수강 후 지원 가능<br/>
+        • 합격 시 학비 연 250~350만원으로 매우 저렴<br/>
+        • 무용단 취업률 최상위 → 장기 투자 대비 최고 ROI
+      </div>
+
+      <div class="info-box">
+        <strong>📅 연도별 체크리스트</strong><br/><br/>
+        <strong>초5~6:</strong> 전문 학원 등록, 발표회 참가 시작<br/>
+        <strong>중1:</strong> 입시 전문 레슨 시작, 콩쿠르 출전<br/>
+        <strong>중2:</strong> 목표 학교 확정, 레파토리 개발 시작<br/>
+        <strong>중3 1학기:</strong> 레파토리 완성, 모의 실기 반복<br/>
+        <strong>중3 2학기:</strong> 원서 접수, 실기 시험 (10~12월)
+      </div>
+
+    </div>
+
+    <div class="warn-box" style="margin-top:20px;">
+      <strong>⚠️ 면책 고지:</strong> 이 페이지의 비용 및 경쟁률 정보는 <strong>2024~2026년 기준 참고 자료</strong>입니다.
+      실제 입시 정보는 해당 연도 각 학교 모집요강을 반드시 확인하세요.
+      개인 레슨비, 의상비 등은 지역·선생님·빈도에 따라 크게 달라질 수 있습니다.
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <strong>도연이의 한국무용 진학 로드맵</strong> · 2026년 기준 참고 자료<br/>
+  최신 입시 정보는 각 학교 홈페이지 및 입시 설명회를 통해 확인하세요.
+</footer>
+
+<script>
+  // Smooth scroll for nav links
+  document.querySelectorAll('nav a').forEach(a => {
+    a.addEventListener('click', e => {
+      e.preventDefault();
+      const target = document.querySelector(a.getAttribute('href'));
+      if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      document.querySelectorAll('nav a').forEach(x => x.classList.remove('active'));
+      a.classList.add('active');
+    });
+  });
+
+  // Update active nav on scroll
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('nav a');
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(s => {
+      if (window.scrollY >= s.offsetTop - 80) current = s.id;
+    });
+    navLinks.forEach(a => {
+      a.classList.toggle('active', a.getAttribute('href') === '#' + current);
+    });
+  });
+
+  // Animate probability bars on scroll
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.querySelectorAll('.prob-bar').forEach(bar => {
+          const w = bar.style.width;
+          bar.style.width = '0';
+          setTimeout(() => { bar.style.width = w; }, 100);
+        });
+      }
+    });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.school-card').forEach(c => observer.observe(c));
+</script>
+
+</body>
+</html>
